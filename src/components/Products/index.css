@@ -1,0 +1,12 @@
+.products .content{
+   display: flex;
+   flex-wrap: wrap;
+   margin: 20px 50px;
+   align-items: center;
+   text-align: center;
+   justify-content: space-between;
+}
+.products .heading{
+    text-align: center;
+    margin: 20px;
+}
