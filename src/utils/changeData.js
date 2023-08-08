@@ -7,14 +7,13 @@ export const updateProduct = async (value, id) => {
         console.log(error)
     }
     return;
-
-
 }
 
 export const handelDeleteItem = async (id, isChange) => {
     try {
         await deleteProduct(id);
-        return isChange;
+        alert("Product Deleted!!")
+        return isChange;   
     } catch (error) {
         console.log(error);
     }

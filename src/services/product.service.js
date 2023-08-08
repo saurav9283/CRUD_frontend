@@ -1,5 +1,5 @@
 import axios from "axios";
 export const addProduct=(data)=>axios.post('https://crud-api-omega.vercel.app/product',data);
-export const getProducts= ()=>axios.get(`https://crud-api-omega.vercel.app/product`);
+export const getProducts= (page)=>axios.get(`http://localhost:5000/product?page=${page}`);
 export const deleteProduct= (id)=>axios.delete(`https://crud-api-omega.vercel.app/product/${id}`);
 export const updateMyProduct= (data,id)=>axios.put(`https://crud-api-omega.vercel.app/product/${id}`,data);

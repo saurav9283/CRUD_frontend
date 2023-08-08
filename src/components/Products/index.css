@@ -4,7 +4,7 @@
    margin: 20px 50px;
    align-items: center;
    text-align: center;
-   justify-content: space-between;
+   justify-content: flex-start;
 }
 .products .heading{
     text-align: center;

@@ -5,6 +5,8 @@
     padding: 20px 5px;
     margin-bottom: 20px;
     box-shadow: 8px 10px 8px 10px #888888;
+    /* margin-left: 10px; */
+    margin-right: 25px;
 }
 .itemCard .img img{
    width: 250px;

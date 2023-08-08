@@ -3,12 +3,17 @@ import './index.css'
 import MyCard from '../card';
 import { handelDeleteItem } from '../../utils/changeData';
 import { getProducts } from '../../services/product.service';
+import { Pagination } from '@mui/material';
 function Products({setIsChange, isUpdate,isChange, setIsUpdate, setItem }) {
     const [myProducts, setProducts] = useState([]);
+    const [count , setcount] = useState(0);
+    const [page , setpage] = useState(1);
     const getAllProducts=async (id)=>{
         try {    
-            const {data}= await  getProducts();
-            setProducts(data);    
+            const {data} = await  getProducts(page);
+            console.log(data)
+            setProducts(data.products); 
+            setcount(data.totalPages)   
         } catch (error) {
             console.log(error)
         }    
@@ -23,10 +28,13 @@ function Products({setIsChange, isUpdate,isChange, setIsUpdate, setItem }) {
         setTimeout(() => {
             setIsChange(!isChange);
         }, 400);
-       
     }
 
-
+    const handleChange = (e, p) => {
+        setpage(p);
+        getAllProducts();
+    }
+    
 
     return (
         <div className='products'>
@@ -49,7 +57,16 @@ function Products({setIsChange, isUpdate,isChange, setIsUpdate, setItem }) {
                 }
                 return null; 
             })}
+            
     </div>
+    <Pagination
+        count={count}
+        size="large"
+        page={page}
+        variant="outlined"
+        shape="rounded"
+        onChange={handleChange}
+      />
 </div>
 
     )
