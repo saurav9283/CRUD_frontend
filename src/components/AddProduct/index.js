@@ -8,6 +8,7 @@ import { addProduct } from '../../services/product.service';
 function AddProduct({ setIsChange, isChange, setIsUpdate, item }) {
     const [form] = Form.useForm();
     const navigate = useNavigate();
+
     const onFinish = async (values) => {
         if (item?.name ) {
             updateProduct(values,item._id);
@@ -19,8 +20,9 @@ function AddProduct({ setIsChange, isChange, setIsUpdate, item }) {
         else {
             try {
                 const res = await addProduct(values);
-                
-                console.log(res.data);
+                let message  = res.data;
+                console.log(message);
+                alert(message)
             } catch (error) {
                 console.log(error)
             }
@@ -44,9 +46,13 @@ function AddProduct({ setIsChange, isChange, setIsUpdate, item }) {
         })
     }
     if (item?.name) {
-
         onFill();
     }
+
+    const showAlert = () => {
+        alert("Product Updated!!");
+    }
+    
 
     return (
         <div className='formBox'>
@@ -85,13 +91,14 @@ function AddProduct({ setIsChange, isChange, setIsUpdate, item }) {
                         <Input />
                     </Form.Item>
                     <Form.Item >
-                        <Button className='saveButton' type="primary" htmlType="submit">
+                        {/* <Button className='saveButton' type="primary" htmlType="submit">
                             Save
-                        </Button>
+                        </Button> */}
+                        <button className='saveButton' onClick={showAlert}>Save</button>
+                        
                     </Form.Item>
                 </Form>
             </div>
-
         </div>
     )
 }

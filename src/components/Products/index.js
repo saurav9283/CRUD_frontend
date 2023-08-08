@@ -30,19 +30,28 @@ function Products({setIsChange, isUpdate,isChange, setIsUpdate, setItem }) {
 
     return (
         <div className='products'>
-                <div className="heading"><h2>my Products</h2></div>
-                <div className="content">
-                    {
-                        myProducts?.map((item, i) => {
-                            if (item.name !== '') {
-                                return (
-                                    <MyCard key={item._id}  setItem={setItem} item={item}  handelDeleteItem={handelDelete} setIsUpdate={setIsUpdate} />
-                                )
-                            }
-                        })
-                    }
-                </div>
-        </div>
+    <div className="heading">
+        <h2>My Products</h2>
+    </div>
+    <div className="content">
+        {myProducts &&
+            myProducts.map((item, i) => {
+                if (item.name !== '') {
+                    return (
+                        <MyCard
+                            key={item._id}
+                            setItem={setItem}
+                            item={item}
+                            handelDeleteItem={handelDelete}
+                            setIsUpdate={setIsUpdate}
+                        />
+                    );
+                }
+                return null; 
+            })}
+    </div>
+</div>
+
     )
 }
 

@@ -15,7 +15,7 @@ function Home({isChange,setIsChange}) {
       </div>
       <div>
         {
-            isUpdate&& <AddProduct isChange={isChange} setIsChange={setIsChange} item={item}  setIsUpdate={setIsUpdate}/>
+            isUpdate && <AddProduct isChange={isChange} setIsChange={setIsChange} item={item}  setIsUpdate={setIsUpdate}/>
         }
       </div>
     </>

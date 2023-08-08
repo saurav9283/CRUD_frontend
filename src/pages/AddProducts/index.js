@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './index.css'
 import Navbar from '../../components/NavBar'
 import AddProduct from '../../components/AddProduct'
@@ -8,6 +7,7 @@ function AddProducts({isChange,setIsChange}) {
       <Navbar />
       <AddProduct  setIsChange={setIsChange} index={-1} isChange={isChange} />
     </div>
+
   )
 }
 

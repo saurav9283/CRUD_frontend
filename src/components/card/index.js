@@ -7,7 +7,9 @@ function MyCard({ setItem, item, handelDeleteItem, setIsUpdate }) {
     const hanndelUpadte = () => {
         setIsUpdate(true);
         setItem(item);
-    }
+   }
+
+    
 
     return (
         <div className='itemCard'>
@@ -18,7 +20,7 @@ function MyCard({ setItem, item, handelDeleteItem, setIsUpdate }) {
                 <h3>{item.name}</h3>
                 <p>{`${item.price} Rs`}</p>
                 <div style={{ padding: "10px" }}>
-                    <Button style={{ backgroundColor: "red", color: "white" }} onClick={() => handelDeleteItem(item._id)} >Delete</Button>
+                    <Button style={{ backgroundColor: "red", color: "white" }} onClick={() => handelDeleteItem(item._id) } >Delete</Button>
                     <Button style={{ backgroundColor: "green", color: "white" }} onClick={hanndelUpadte} >Update</Button>
                 </div>
 
