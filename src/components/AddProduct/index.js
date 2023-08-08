@@ -56,9 +56,7 @@ function AddProduct({ setIsChange, isChange, setIsUpdate, item }) {
 
     return (
         <div className='formBox'>
-            {
-                item?.name ? (<div className='myicon' onClick={() => setIsUpdate(false)} ><CloseIcon /></div>) : ""
-            }
+            <div className='myicon' onClick={() => setIsUpdate(false)} ><CloseIcon /></div>
             <h2>Enter Product Details</h2>
             <div className='form'>
                 <Form form={form} onFinish={onFinish}>
