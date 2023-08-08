@@ -66,6 +66,7 @@ function Products({setIsChange, isUpdate,isChange, setIsUpdate, setItem }) {
         variant="outlined"
         shape="rounded"
         onChange={handleChange}
+        className='Pagination'
       />
 </div>
 
