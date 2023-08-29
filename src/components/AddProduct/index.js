@@ -10,14 +10,6 @@ function AddProduct({ setIsChange, isChange, setIsUpdate, item }) {
     const navigate = useNavigate();
 
     const onFinish = async (values) => {
-        if (item?.name ) {
-            updateProduct(values,item._id);
-            setIsUpdate(false);
-            setTimeout(() => {
-                setIsChange(!isChange);
-            }, 400);
-        }
-        else {
             try {
                 const res = await addProduct(values);
                 let message  = res.data;
@@ -26,7 +18,6 @@ function AddProduct({ setIsChange, isChange, setIsUpdate, item }) {
             } catch (error) {
                 console.log(error)
             }
-        }
 
         navigate('/');
         setIsChange(!isChange);
